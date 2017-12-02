@@ -1,2 +1,2 @@
 # CMDWorkspaceTools
-Applications for command prompt. Mainly for a
+Applications for command prompt. Mainly for Android.
