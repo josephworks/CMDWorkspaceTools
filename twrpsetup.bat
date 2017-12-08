@@ -3,8 +3,8 @@ dir
 adb reboot bootloader
 echo device rebooted
 echo flashing twrp image
-fastboot flash recovery twrp.img
 echo flashing twrp complete
+fastboot flash recovery twrp.img
 sleep 60
 echo rebooting
 fastboot reboot
