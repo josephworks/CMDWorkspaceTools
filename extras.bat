@@ -1,3 +1,5 @@
+@echo off
+
 echo showing added commands:
 echo 7z - 7Zip for command prompt
 echo aapt - List contents of Zip-compatible archive
