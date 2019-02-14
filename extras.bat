@@ -39,7 +39,7 @@ echo pechecksum - displays and updates the checksum of PE files (EXE, DLL, ...)
 echo ---
 echo scalculate - unknown
 echo ---
-echo setacl - SetACL manages permissions, auditing and ownership information. It does everything the tools built into Windows do, and much more. It is inherently automatable and scriptable. The COM version provides the full functionality to any COM-enabled programming language (C#, Visual Basic, C++, Delphi, PowerShell, VBScript, …).
+echo setacl - SetACL manages permissions, auditing and ownership information. It does everything the tools built into Windows do, and much more. It is inherently automatable and scriptable. The COM version provides the full functionality to any COM-enabled programming language (C#, Visual Basic, C++, Delphi, PowerShell, VBScript, ï¿½).
 echo ---
 echo upx - UPX is a free, portable, extendable, high-performance executable packer for several executable formats.
 echo ---
