@@ -1,4 +1,4 @@
-52
+57
 oneplus7pro/TWRP 3.3.1 Unified Android Q OP7P\TWRP-3.3.1-OP7-OP7P-Q
 oneplus7pro/TWRP 3.3.1 Unified Android Pie OP7P\TWRP-3.3.1-OP7-OP7P-Pie
 oneplus7pro/TWRP 3.3.1 Unified OP7P\TWRP-3.3.1-OP7-OP7P
@@ -7,11 +7,13 @@ oneplus7/TWRP 3.3.1 Unified Android Q OP7\TWRP-3.3.1-OP7-OP7P-Q
 oneplus7/TWRP 3.3.1 Unified Android Pie OP7\TWRP-3.3.1-OP7-OP7P-Pie
 oneplus7/TWRP 3.3.1 Unified OP7\TWRP-3.3.1-OP7-OP7P
 
-oneplus6t/TWRP 3.3.1 PIE OP6T\TWRP-3.3.1-OP6T
+oneplus6t/TWRP 3.3.1 Q OP6T\TWRP-3.3.1-OP6T-Q
+oneplus6t/TWRP 3.3.1 PIE OP6T\TWRP-3.3.1-OP6T-Pie
 oneplus6t/TWRP 3.3.0 OP6T\TWRP-3.3.0-OP6T
 oneplus6t/TWRP 3.2.3 OP6T\TWRP-3.2.3-OP6T
 
-oneplus6/TWRP 3.3.1 PIE OP6\TWRP-3.3.1-OP6
+oneplus6/TWRP 3.3.1 Q OP6\TWRP-3.3.1-OP6-Q
+oneplus6/TWRP 3.3.1 PIE OP6\TWRP-3.3.1-OP6-Pie
 oneplus6/TWRP 3.3.0 PIE OP6\TWRP-3.3.0-OP6
 oneplus6/TWRP 3.2.3 PIE OP6\TWRP-3.2.3-OP6
 oneplus6/TWRP 3.2.3 Blu Spark PIE OP6\TWRP-3.2.3-OP6-Blue-Spark-PIE
@@ -297,8 +299,14 @@ xiaomiredmik20/TWRP 3.3.1 XRK20\TWRP-3.3.1-K20.img
 
 xiaomimi9t/TWRP 3.3.1 XM9T\TWRP-3.3.1-K20.img
 
-asuszenfone6/TWRP 3.3.1 PIE AZ6\TWRP-3.3.1-AZ6-Q
-asuszenfone6/TWRP 3.3.1 Q AZ6\TWRP-3.3.1-AZ6-Pie
+lenovoz6pro/TWRP 3.3.1 LZ6P\TWRP-3.3.1-LZ6P.img
+lenovok10note-z6youth/TWRP 3.3.1 LZ6Y\TWRP-3.3.1-LZ6Y.img
+
+asusrogphone2/TWRP 3.3.1 Q ROG2\TWRP-3.3.1-ROG2-Q
+asusrogphone2/TWRP 3.3.1 Pie ROG2\TWRP-3.3.1-ROG2-Pie
+
+asuszenfone6/TWRP 3.3.1 Q AZ6\TWRP-3.3.1-AZ6-Q
+asuszenfone6/TWRP 3.3.1 PIE AZ6\TWRP-3.3.1-AZ6-Pie
 
 xiaomiredminote8/TWRP 3.3.1 XRN8\TWRP-3.3.1-XRN8.img
 
@@ -319,6 +327,8 @@ xiaomimi6/TWRP 3.3.0 MI6\TWRP-3.3.0-MI6.img
 xiaomimi6/TWRP 3.2.3 MI6\TWRP-3.2.3-MI6.img
 xiaomimi6/TWRP 3.2.3 Arian MI6\TWRP-3.2.3-Arian-MI6.img
 xiaomimi6/TWRP 3.2.3 Miccia MI6\TWRP-3.2.3-Miccia-MI6.img
+
+xiaomiredminote6pro/TWRP 3.3.1 XRN6\TWRP-3.3.1-XRN6.img
 
 xiaomiredminote5pro/TWRP 3.3.1 XRN5\TWRP-3.3.1-XRN5
 xiaomiredminote5pro/TWRP 3.3.0 XRN5\TWRP-3.3.0-XRN5
@@ -379,6 +389,9 @@ amazfitstratos/TWRP 3.2.3 STRATOS\TWRP-3.2.3-STRATOS-Full.img
 
 amazfitverge/TWRP 3.2.3 VERGE\TWRP-3.2.3-VERGE-Full.img
 
+magisk/Magisk 20.4\Magisk-v20.4.zip
+magisk/Magisk 20.3\Magisk-v20.3.zip
+magisk/Magisk 20.2\Magisk-v20.2.zip
 magisk/Magisk 20.1\Magisk-v20.1.zip
 magisk/Magisk 20.0\Magisk-v20.0.zip
 magisk/Magisk 19.4\Magisk-v19.4-beta.zip
