@@ -435,14 +435,10 @@ class Forwarder(object):
         (exit_code, output) = cmd_helper.GetCmdStatusAndOutputWithTimeout(
             kill_cmd, Forwarder._TIMEOUT)
         if exit_code == -9:
-          # pkill can exit with -9, seemingly in cases where the process it's
-          # asked to kill dies sometime during pkill running. In this case,
-          # re-running should result in pkill succeeding.
-          logging.warning(
-              'pkilling host forwarder returned -9, retrying through strace. '
-              'Output: %s', output)
-          exit_code, output = cmd_helper.GetCmdStatusAndOutputWithTimeout(
-              ['strace', '-f', '-s', '256'] + kill_cmd, Forwarder._TIMEOUT)
+          # pkill can exit with -9, which indicates that it was killed. It's
+          # possible that the forwarder was still killed, though, which will
+          # be checked later.
+          logging.warning('pkilling host forwarder returned -9.')
         if exit_code in (0, 1):
           # pkill exits with a 0 if it was able to signal at least one process.
           # pkill exits with a 1 if it wasn't able to signal a process because
@@ -458,6 +454,7 @@ class Forwarder(object):
                        '\n  '.join(host_forwarder_lines))
         else:
           logger.error('No remaining host_forwarder processes?')
+          return
         _DumpHostLog()
         error_msg = textwrap.dedent("""\
             `{kill_cmd}` failed to kill host_forwarder.

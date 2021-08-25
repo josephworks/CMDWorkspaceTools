@@ -194,13 +194,16 @@ class TsProxyServer(object):
     if not self._proc:
       return
     try:
+      self._IssueCommand('exit', timeout=10)
       py_utils.WaitFor(lambda: self._proc.poll() is not None, 10)
     except py_utils.TimeoutException:
-      try:
-        # Use a SIGNINT so that it can do graceful cleanup
-        self._proc.send_signal(signal.SIGINT)
-      except ValueError:
-        logging.warning('Unable to stop ts_proxy_server gracefully.\n')
+      # signal.SIGINT is not supported on Windows.
+      if not sys.platform.startswith('win'):
+        try:
+          # Use a SIGNINT so that it can do graceful cleanup
+          self._proc.send_signal(signal.SIGINT)
+        except ValueError:
+          logging.warning('Unable to stop ts_proxy_server gracefully.\n')
       self._proc.terminate()
     _, err = self._proc.communicate()
 

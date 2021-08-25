@@ -14,6 +14,7 @@ The class hierarchy for device exceptions is:
      |    +-- FastbootCommandFailedError
      |    +-- DeviceVersionError
      |    +-- DeviceChargingError
+     |    +-- RootUserBuildError
      +-- CommandTimeoutError
      +-- DeviceUnreachableError
      +-- NoDevicesError
@@ -21,6 +22,8 @@ The class hierarchy for device exceptions is:
      +-- NoAdbError
 
 """
+
+import six
 
 from devil import base_error
 from devil.utils import cmd_helper
@@ -157,7 +160,7 @@ class AdbShellCommandFailedError(AdbCommandFailedError):
     segments.append('  exit status: %s\n' % status)
     if output:
       segments.append('  output:\n')
-      if isinstance(output, basestring):
+      if isinstance(output, six.string_types):
         output_lines = output.splitlines()
       else:
         output_lines = output
@@ -228,3 +231,11 @@ class DeviceChargingError(CommandFailedError):
 
   def __init__(self, message, device_serial=None):
     super(DeviceChargingError, self).__init__(message, device_serial)
+
+
+class RootUserBuildError(CommandFailedError):
+  """Exception for being unable to root a device with "user" build."""
+
+  def __init__(self, message=None, device_serial=None):
+    super(RootUserBuildError, self).__init__(
+        message or 'Unable to root device with user build.', device_serial)

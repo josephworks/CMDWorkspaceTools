@@ -114,6 +114,7 @@ def RecoverDevice(device, denylist, should_reboot=lambda device: True):
     return
 
   if should_reboot(device):
+    should_restore_root = device.HasRoot()
     try:
       device.WaitUntilFullyBooted(retries=0)
     except (device_errors.CommandTimeoutError, device_errors.CommandFailedError,
@@ -154,6 +155,8 @@ def RecoverDevice(device, denylist, should_reboot=lambda device: True):
     try:
       device.WaitUntilFullyBooted(
           retries=0, timeout=device.REBOOT_DEFAULT_TIMEOUT)
+      if should_restore_root:
+        device.EnableRoot()
     except (device_errors.CommandFailedError,
             device_errors.DeviceUnreachableError):
       logger.exception('Failure while waiting for %s.', str(device))
@@ -230,8 +233,6 @@ def main():
   parser = argparse.ArgumentParser()
   logging_common.AddLoggingArguments(parser)
   script_common.AddEnvironmentArguments(parser)
-  # TODO(crbug.com/1097306): Remove this once callers switch to --denylist-file.
-  parser.add_argument('--blacklist-file', help=argparse.SUPPRESS)
   parser.add_argument('--denylist-file', help='Device denylist JSON file.')
   parser.add_argument(
       '--known-devices-file',
@@ -248,9 +249,6 @@ def main():
 
   denylist = (device_denylist.Denylist(args.denylist_file)
               if args.denylist_file else None)
-  # TODO(crbug.com/1097306): Remove this once callers switch to --denylist-file.
-  if not denylist and args.blacklist_file:
-    denylist = device_denylist.Denylist(args.blacklist_file)
 
   expected_devices = device_status.GetExpectedDevices(args.known_devices_files)
   usb_devices = set(lsusb.get_android_devices())
